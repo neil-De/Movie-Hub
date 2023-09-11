@@ -35,9 +35,13 @@ function App() {
       <Router>
         <div className="container">
           <section className="py-5 text-center container">
-            <div className="row py-lg-5">
+            <div className="row py-lg-5 ">
+              <h1 className="fw-light">XELL Movie Hub</h1>
+            </div>
+          </section>
+          <Switch>
+            <Route exact path="/">
               <div className="col-lg-6 col-md-8 mx-auto">
-                <h1 className="fw-light">XELL Movie Hub</h1>
                 <div className="input-group mb-3">
                   <button
                     onClick={() => {
@@ -61,11 +65,8 @@ function App() {
                   />
                 </div>
               </div>
-            </div>
-          </section>
-          <Switch>
-            <Route exact path="/">
-              <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+              <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-5">
                 {error != "False" ? (
                   movies.map((movie) =>
                     isPending ? <Loader /> : <MovieCard movie={movie} />
